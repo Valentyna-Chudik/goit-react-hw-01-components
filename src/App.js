@@ -10,24 +10,28 @@ import friends from './components/FriendList/friends.json';
 import TransactionHistory from './components/TransactionHistory/TransactionHistory';
 import transactions from './components/TransactionHistory/transactions.json';
 
+import Container from './components/Container/Container';
+
 export default function App() {
   return (
     <div>
-      <Profile
-        avatar={userData.avatar}
-        name={userData.name}
-        tag={userData.tag}
-        location={userData.location}
-        followers={userData.stats.followers}
-        views={userData.stats.views}
-        likes={userData.stats.likes}
-      />
+      <Container>
+        <Profile
+          avatar={userData.avatar}
+          name={userData.name}
+          tag={userData.tag}
+          location={userData.location}
+          followers={userData.stats.followers}
+          views={userData.stats.views}
+          likes={userData.stats.likes}
+        />
 
-      <Statistics title="Upload stats" stats={statData} />
+        <Statistics title="Upload stats" stats={statData} />
 
-      <FriendsList friends={friends} />
+        <FriendsList friends={friends} />
 
-      <TransactionHistory items={transactions} />
+        <TransactionHistory items={transactions} />
+      </Container>
     </div>
   );
 }

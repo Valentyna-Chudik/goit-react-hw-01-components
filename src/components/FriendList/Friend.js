@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
+import styles from './Friend.module.css';
 
 export default function Friend({ avatar, name, isOnline }) {
   return (
     <Fragment>
-      <span class="status">{isOnline}</span>
-      <img class="avatar" src={avatar} alt={name} width="48" />
-      <p class="name">{name}</p>
+      <span
+        className={styles.status}
+        style={{ backgroundColor: isOnline ? 'green' : 'red' }}
+      >
+        {isOnline}
+      </span>
+      <img className={styles.avatar} src={avatar} alt={name} width="48" />
+      <p className={styles.name}>{name}</p>
     </Fragment>
   );
 }
