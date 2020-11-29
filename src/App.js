@@ -21,9 +21,7 @@ export default function App() {
           name={userData.name}
           tag={userData.tag}
           location={userData.location}
-          followers={userData.stats.followers}
-          views={userData.stats.views}
-          likes={userData.stats.likes}
+          stats={userData.stats}
         />
 
         <Statistics title="Upload stats" stats={statData} />

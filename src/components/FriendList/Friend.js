@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { Fragment } from 'react';
 import styles from './Friend.module.css';
 
 export default function Friend({ avatar, name, isOnline }) {
   return (
-    <Fragment>
+    <li className={styles.item}>
       <span
         className={styles.status}
         style={{ backgroundColor: isOnline ? 'green' : 'red' }}
@@ -13,7 +12,7 @@ export default function Friend({ avatar, name, isOnline }) {
       </span>
       <img className={styles.avatar} src={avatar} alt={name} width="48" />
       <p className={styles.name}>{name}</p>
-    </Fragment>
+    </li>
   );
 }
 
